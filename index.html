@@ -3,7 +3,7 @@
     <head>
         <script type="text/javascript">
         function generatePush(){}
-            if (!(Notification in window)) {
+            if (!("Notification" in window)) {
                 console.log("Notifications are not supported")
             } else if (Notification.permission === "granted") {
                 const notification = new Notification("Completed Notification Configuration");
