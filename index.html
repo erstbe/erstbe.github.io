@@ -1,9 +1,23 @@
 <!DOCTYPE html>
 <html>
     <head>
-
+        <script type="text/javascript">
+        function generatePush(){}
+            if (!(Notification in window)) {
+                console.log("Notifications are not supported")
+            } else if (Notification.permission === "granted") {
+                const notification = new Notification("Completed Notification Configuration");
+            } else {
+                Notification.requestPermission().then((permission) => {
+                if (permission === "granted") {
+                    const notification = new Notification("Completed Notification Configuration");
+                }})
+            }
+            
+                
+        </script>
     </head>
     <body>
-        <div>Hello World</div>
+        <div>Test Configuring notifications...</div>
     </body>
 </html>
